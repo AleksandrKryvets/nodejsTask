@@ -12,7 +12,7 @@ const getAverage = require('./src/logic').getAverage;
 const sendRequest = require('./src/logic').sendRequest;
 const createRequestBody = require('./src/logic').createRequestBody;
 
-const job = new CronJob('* * * * * *', async function () {
+const job = new CronJob('* 2 * * * *', async function () {
     const data = await client.database.getCurrentMedianHistoryPrice();
     const price = new Price({
         base: data.base.amount,
